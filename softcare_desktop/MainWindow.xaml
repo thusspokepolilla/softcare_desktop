@@ -7,39 +7,106 @@
         mc:Ignorable="d"
         Title="MainWindow"
         Width="1280"
-        Height="720">
+        Height="720"
+        MinWidth="1280"
+        MinHeight="720">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition />
+            <RowDefinition Height="1*" />
             <RowDefinition Height="500" />
-            <RowDefinition />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="assets/background.png" />
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="750" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical"
-                    Grid.Row="1"
-                    Grid.Column="1">
-            <Image HorizontalAlignment="Center"
-                   Margin="0,17,0,0"
-                   VerticalAlignment="Center"
-                   Source="/logo_transparent.png"
-                   Height="129"
-                   Width="494"
-                   Grid.Row="1"
-                   Grid.Column="1" />
-        </StackPanel>
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55*" />
+                <ColumnDefinition Width="45*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Source="/logo_transparent.png"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Height="178"
+                       Width="612" />
+                <TextBlock FontFamily="Segoe UI Semibold"
+                           FontSize="50"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           Height="80"
+                           Margin="0,21,0,0"
+                           Grid.Row="1"
+                           Width="386"
+                           TextAlignment="Center">
+                    <TextBlock.Text>Welcome back!</TextBlock.Text>
+                </TextBlock>
+                <TextBlock FontFamily="Segoe UI"
+                           FontSize="30"
+                           TextAlignment="Center"
+                           Grid.Row="1"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">
+                    <TextBlock.Text>Enter your username and password.</TextBlock.Text>
+                </TextBlock>
+
+            </Grid>
+            <TextBlock FontFamily="Segoe UI Semibold"
+                       FontSize="35"
+                       TextAlignment="Left"
+                       Grid.Column="1"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Top"
+                       Margin="59,83,0,0">
+                <TextBlock.Text>Username</TextBlock.Text>
+            </TextBlock>
+            <TextBox Name="tbxUser"
+                     FontFamily="Segoe UI"
+                     FontSize="30"
+                     TextAlignment="Left"
+                     Grid.Column="1"
+                     VerticalAlignment="Top"
+                     Margin="59,135,0,0"
+                     Width="458"
+                     HorizontalAlignment="Left" />
+            <TextBlock FontFamily="Segoe UI Semibold"
+                       FontSize="35"
+                       TextAlignment="Left"
+                       Grid.Column="1"
+                       HorizontalAlignment="Left"
+                       Margin="59,223,0,224">
+                <TextBlock.Text>Password</TextBlock.Text>
+            </TextBlock>
+            <PasswordBox Name="tbxPass"
+                     FontFamily="Segoe UI"
+                     FontSize="30"
+                     Grid.Column="1"
+                     VerticalAlignment="Top"
+                     Margin="59,276,0,0"
+                     Width="458"
+                     HorizontalAlignment="Left" 
+                     />
+            <Button Name="btnLogin"
+                    FontFamily="Segoe UI Medium"
+                    FontSize="30"
+                    HorizontalAlignment="Left"
+                    Grid.Column="1"
+                    Content="Login"
+                    Margin="355,384,0,0"
+                    Width="162"
+                    VerticalAlignment="Top" 
+                    Click="btnLogin_Click"/>
+        </Grid>
 
         <Rectangle Opacity="0.5"
                    Fill="White"
                    Panel.ZIndex="-1"
-                   Grid.ColumnSpan="3"
-                   Margin="0,83,0,83"
-                   Grid.RowSpan="3" />
+                   Margin="0,0,0,0"
+                   Grid.Row="1" />
     </Grid>
 </Window>

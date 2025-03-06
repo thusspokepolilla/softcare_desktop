@@ -19,6 +19,16 @@ namespace softcare_desktop
         public MainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Login Successful!");
+            AdminPage admin = new AdminPage();
+            admin.Show();
+            this.Close();
+            
         }
     }
 }
