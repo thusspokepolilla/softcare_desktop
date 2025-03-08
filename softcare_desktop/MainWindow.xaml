@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:softcare_desktop"
         mc:Ignorable="d"
-        Title="MainWindow"
+        Title="Login"
         Width="1280"
         Height="720"
         MinWidth="1280"
-        MinHeight="720">
+        MinHeight="720"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -35,7 +36,7 @@
                        VerticalAlignment="Center"
                        Height="178"
                        Width="612" />
-                <TextBlock FontFamily="Segoe UI Semibold"
+                <TextBlock FontFamily="{StaticResource ReadexProSemiBold}"
                            FontSize="50"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Top"
@@ -46,7 +47,7 @@
                            TextAlignment="Center">
                     <TextBlock.Text>Welcome back!</TextBlock.Text>
                 </TextBlock>
-                <TextBlock FontFamily="Segoe UI"
+                <TextBlock FontFamily="{StaticResource ReadexProRegular}"
                            FontSize="30"
                            TextAlignment="Center"
                            Grid.Row="1"
@@ -56,7 +57,7 @@
                 </TextBlock>
 
             </Grid>
-            <TextBlock FontFamily="Segoe UI Semibold"
+            <TextBlock FontFamily="{StaticResource ReadexProMedium}"
                        FontSize="35"
                        TextAlignment="Left"
                        Grid.Column="1"
@@ -65,16 +66,17 @@
                        Margin="59,83,0,0">
                 <TextBlock.Text>Username</TextBlock.Text>
             </TextBlock>
-            <TextBox Name="tbxUser"
-                     FontFamily="Segoe UI"
+            <TextBox x:Name="tbxUser"
+                     FontFamily="{StaticResource ReadexProLight}"
                      FontSize="30"
                      TextAlignment="Left"
                      Grid.Column="1"
-                     VerticalAlignment="Top"
-                     Margin="59,135,0,0"
+                     Margin="59,132,0,0"
+                     HorizontalAlignment="Left"
                      Width="458"
-                     HorizontalAlignment="Left" />
-            <TextBlock FontFamily="Segoe UI Semibold"
+                     Height="51"
+                     VerticalAlignment="Top" />
+            <TextBlock FontFamily="{StaticResource ReadexProMedium}"
                        FontSize="35"
                        TextAlignment="Left"
                        Grid.Column="1"
@@ -82,25 +84,26 @@
                        Margin="59,223,0,224">
                 <TextBlock.Text>Password</TextBlock.Text>
             </TextBlock>
-            <PasswordBox Name="tbxPass"
-                     FontFamily="Segoe UI"
-                     FontSize="30"
-                     Grid.Column="1"
-                     VerticalAlignment="Top"
-                     Margin="59,276,0,0"
-                     Width="458"
-                     HorizontalAlignment="Left" 
-                     />
-            <Button Name="btnLogin"
-                    FontFamily="Segoe UI Medium"
+            <PasswordBox x:Name="tbxPass"
+                         FontFamily="{StaticResource ReadexProLight}"
+                         FontSize="30"
+                         Grid.Column="1"
+                         VerticalAlignment="Top"
+                         Margin="59,276,0,0"
+                         Width="458"
+                         HorizontalAlignment="Left"
+                         Height="51" />
+            <Button x:Name="btnLogin"
+                    FontFamily="{StaticResource ReadexProRegular}"
                     FontSize="30"
                     HorizontalAlignment="Left"
                     Grid.Column="1"
                     Content="Login"
-                    Margin="355,384,0,0"
-                    Width="162"
-                    VerticalAlignment="Top" 
-                    Click="btnLogin_Click"/>
+                    Margin="331,370,0,0"
+                    Width="186"
+                    VerticalAlignment="Top"
+                    Click="btnLogin_Click"
+                    Height="56" />
         </Grid>
 
         <Rectangle Opacity="0.5"

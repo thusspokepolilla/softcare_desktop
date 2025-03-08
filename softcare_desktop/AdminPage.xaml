@@ -5,8 +5,119 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:softcare_desktop"
         mc:Ignorable="d"
-        Title="AdminPage" Height="450" Width="800">
-    <Grid>
+        Title="AdminPage"
+        Height="900"
+        Width="1600">
+    <Window.Resources>
+        <Style x:Key="SidebarButtons" TargetType="Button">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource ReadexProBold}" />
+            <Setter Property="FontSize"
+                    Value="28" />
+            <Setter Property="Foreground"
+                    Value="White" />
+            <Setter Property="Background"
+                    Value="#5e7fb2" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="Black"
+                                BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Left"
+                                              VerticalAlignment="Center"
+                                              Margin="41,0,0,0"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver"
+                         Value="True">
+                    <Setter Property="Background"
+                            Value="#1cb2e3" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
         
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#5e7fb2"
+                   Grid.Column="0" />
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="70" />
+            </Grid.RowDefinitions>
+            <Image x:Name="imgUser"
+                   Source="/assets/User.png"
+                   Margin="23,22,0,22"
+                   HorizontalAlignment="Left"
+                   Width="94"
+                   Grid.Row="0" />
+            <TextBlock FontFamily="{StaticResource ReadexProBold}"
+                       Foreground="White"
+                       FontSize="28"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="134,0,0,0">
+                ADMIN
+            </TextBlock>
+            <Button x:Name="btnDashboard"
+                    Grid.Row="1"
+                    Content="Dashboard"
+                    Style="{StaticResource SidebarButtons}" />
+            <Button x:Name="btnPatients"
+                    Grid.Row="2"
+                    Content="Patient Records"
+                    Style="{StaticResource SidebarButtons}" />
+            <Button x:Name="btnDoctorApps"
+                    Grid.Row="3"
+                    Content="Doctor Appointments"
+                    Style="{StaticResource SidebarButtons}" />
+            <Button x:Name="btnBillings"
+                    Grid.Row="4"
+                    Content="Billings"
+                    Style="{StaticResource SidebarButtons}" />
+            <Button x:Name="btnSQLQuery"
+                    Grid.Row="5"
+                    Content="SQL Query"
+                    Style="{StaticResource SidebarButtons}" />
+            <Button x:Name="btnUserManagement"
+                    Grid.Row="6"
+                    Content="User Management"
+                    Style="{StaticResource SidebarButtons}" />
+            <Button x:Name="btnLogOut"
+                    Grid.Row="8"
+                    Content="Log Out"
+                    Style="{StaticResource SidebarButtons}" />
+            
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="125" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Image Source="/logo_transparent.png"
+                   Height="108"
+                   Margin="0,8,6,9"
+                   Grid.Row="0"
+                   HorizontalAlignment="Right"
+                   Width="434" />
+            <DataGrid Grid.Row="1"
+                      d:ItemsSource="{d:SampleData ItemCount=5}"
+                      Margin="50,126,64,126" />
+        </Grid>
     </Grid>
 </Window>

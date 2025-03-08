@@ -11,22 +11,62 @@
   <ItemGroup>
     <None Remove="assets\background.jpg" />
     <None Remove="assets\background.png" />
+    <None Remove="assets\Copy of Soft Eng Hospital Sketch %281%29.png" />
+    <None Remove="assets\Copy of Soft Eng Hospital Sketch.png" />
+    <None Remove="assets\DR.png" />
     <None Remove="assets\LOGO.png" />
     <None Remove="assets\logo_transparent.png" />
+    <None Remove="assets\User.png" />
+    <None Remove="assets\With White BGHospital Logo.png" />
+    <None Remove="assets\_Hospital Logo.png" />
     <None Remove="background.png" />
+    <None Remove="fonts\ReadexPro-bold.ttf" />
+    <None Remove="fonts\ReadexPro-ExtraLight.ttf" />
+    <None Remove="fonts\ReadexPro-Light.ttf" />
+    <None Remove="fonts\ReadexPro-Medium.ttf" />
+    <None Remove="fonts\ReadexPro-Regular.ttf" />
+    <None Remove="fonts\ReadexPro-SemiBold.ttf" />
     <None Remove="logo_transparent.png" />
     <None Remove="_Hospital Logo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="assets\background.png" />
+    <Resource Include="assets\Copy of Soft Eng Hospital Sketch (1).png" />
+    <Resource Include="assets\Copy of Soft Eng Hospital Sketch.png" />
+    <Resource Include="assets\DR.png" />
     <Resource Include="assets\LOGO.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="assets\background.jpg" />
     <Resource Include="assets\logo_transparent.png" />
+    <Resource Include="assets\User.png" />
+    <Resource Include="assets\With White BGHospital Logo.png" />
+    <Resource Include="assets\_Hospital Logo.png" />
     <Resource Include="background.png" />
+    <Resource Include="fonts\ReadexPro-bold.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fonts\ReadexPro-ExtraLight.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fonts\ReadexPro-Light.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fonts\ReadexPro-Medium.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fonts\ReadexPro-Regular.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="fonts\ReadexPro-SemiBold.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="logo_transparent.png" />
     <Resource Include="_Hospital Logo.png" />
   </ItemGroup>
