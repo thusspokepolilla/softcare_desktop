@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="assets\admin_appointments.png" />
+    <None Remove="assets\admin_billing.png" />
+    <None Remove="assets\admin_patients.png" />
+    <None Remove="assets\admin_users.png" />
     <None Remove="assets\background.jpg" />
     <None Remove="assets\background.png" />
     <None Remove="assets\Copy of Soft Eng Hospital Sketch %281%29.png" />
@@ -31,10 +35,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="assets\admin_appointments.png" />
+    <Resource Include="assets\admin_billing.png" />
+    <Resource Include="assets\admin_patients.png" />
+    <Resource Include="assets\admin_users.png" />
     <Resource Include="assets\background.png" />
     <Resource Include="assets\Copy of Soft Eng Hospital Sketch (1).png" />
     <Resource Include="assets\Copy of Soft Eng Hospital Sketch.png" />

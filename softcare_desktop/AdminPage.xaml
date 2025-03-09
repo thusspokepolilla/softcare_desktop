@@ -4,12 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:softcare_desktop"
+        xmlns:pages="clr-namespace:softcare_desktop.pages"
+        d:DataContext="{d:DesignInstance Type=local:MainViewmodel}"
         mc:Ignorable="d"
         Title="AdminPage"
         Height="900"
-        Width="1600">
+        Width="1600"
+        MinHeight="768"
+        MinWidth="1366">
     <Window.Resources>
-        <Style x:Key="SidebarButtons" TargetType="Button">
+        <Style x:Key="SidebarButtons"
+               TargetType="Button">
             <Setter Property="FontFamily"
                     Value="{StaticResource ReadexProBold}" />
             <Setter Property="FontSize"
@@ -26,7 +31,7 @@
                                 BorderThickness="0">
                             <ContentPresenter HorizontalAlignment="Left"
                                               VerticalAlignment="Center"
-                                              Margin="41,0,0,0"/>
+                                              Margin="41,0,0,0" />
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -77,31 +82,44 @@
             <Button x:Name="btnDashboard"
                     Grid.Row="1"
                     Content="Dashboard"
-                    Style="{StaticResource SidebarButtons}" />
+                    Style="{StaticResource SidebarButtons}"
+                    Command="{Binding CMDChangePage}"
+                    CommandParameter="{x:Static local:AdminPageList.AdminDashboard}"/>
             <Button x:Name="btnPatients"
                     Grid.Row="2"
                     Content="Patient Records"
-                    Style="{StaticResource SidebarButtons}" />
+                    Style="{StaticResource SidebarButtons}"
+                    Command="{Binding CMDChangePage}"
+                    CommandParameter="{x:Static local:AdminPageList.AdminPatients}"/>
             <Button x:Name="btnDoctorApps"
                     Grid.Row="3"
                     Content="Doctor Appointments"
-                    Style="{StaticResource SidebarButtons}" />
+                    Style="{StaticResource SidebarButtons}"
+                    Command="{Binding CMDChangePage}"
+                    CommandParameter="{x:Static local:AdminPageList.AdminDoctors}"/>
             <Button x:Name="btnBillings"
                     Grid.Row="4"
                     Content="Billings"
-                    Style="{StaticResource SidebarButtons}" />
+                    Style="{StaticResource SidebarButtons}"
+                    Command="{Binding CMDChangePage}"
+                    CommandParameter="{x:Static local:AdminPageList.AdminBillings}"/>
             <Button x:Name="btnSQLQuery"
                     Grid.Row="5"
                     Content="SQL Query"
-                    Style="{StaticResource SidebarButtons}" />
+                    Style="{StaticResource SidebarButtons}"
+                    Command="{Binding CMDChangePage}"
+                    CommandParameter="{x:Static local:AdminPageList.AdminSQL}"/>
             <Button x:Name="btnUserManagement"
                     Grid.Row="6"
                     Content="User Management"
-                    Style="{StaticResource SidebarButtons}" />
+                    Style="{StaticResource SidebarButtons}"
+                    Command="{Binding CMDChangePage}"
+                    CommandParameter="{x:Static local:AdminPageList.AdminUsers}" />
             <Button x:Name="btnLogOut"
                     Grid.Row="8"
                     Content="Log Out"
-                    Style="{StaticResource SidebarButtons}" />
+                    Style="{StaticResource SidebarButtons}"
+                    />
             
         </Grid>
         <Grid Grid.Column="1">
@@ -115,9 +133,45 @@
                    Grid.Row="0"
                    HorizontalAlignment="Right"
                    Width="434" />
-            <DataGrid Grid.Row="1"
-                      d:ItemsSource="{d:SampleData ItemCount=5}"
-                      Margin="50,126,64,126" />
+            <Frame Grid.Row="1"
+                   Margin="30">
+                <Frame.Style>
+                    <Style TargetType="{x:Type ContentControl}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
+                                         Value="{x:Static local:AdminPageList.AdminDashboard}">
+                                <Setter Property="ContentTemplate"
+                                        Value="{StaticResource aDash}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
+                                         Value="{x:Static local:AdminPageList.AdminPatients}">
+                                <Setter Property="ContentTemplate"
+                                        Value="{StaticResource aPatients}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
+                                         Value="{x:Static local:AdminPageList.AdminDoctors}">
+                                <Setter Property="ContentTemplate"
+                                        Value="{StaticResource aDocs}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
+                                         Value="{x:Static local:AdminPageList.AdminBillings}">
+                                <Setter Property="ContentTemplate"
+                                        Value="{StaticResource aBills}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
+                                         Value="{x:Static local:AdminPageList.AdminSQL}">
+                                <Setter Property="ContentTemplate"
+                                        Value="{StaticResource aSQL}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
+                                         Value="{x:Static local:AdminPageList.AdminUsers}">
+                                <Setter Property="ContentTemplate"
+                                        Value="{StaticResource aUsers}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Frame.Style>
+            </Frame>
         </Grid>
     </Grid>
 </Window>

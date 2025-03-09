@@ -10,21 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace softcare_desktop
+namespace softcare_desktop.pages
 {
     /// <summary>
-    /// Interaction logic for AdminPage.xaml
+    /// Interaction logic for AdminSQL.xaml
     /// </summary>
-    public partial class AdminPage : Window
+    public partial class AdminSQL : Page
     {
-        public AdminPage()
+        public AdminSQL()
         {
             InitializeComponent();
-            this.DataContext = new MainViewmodel(); // initialize current page
         }
 
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }

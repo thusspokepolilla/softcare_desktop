@@ -10,21 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace softcare_desktop
+namespace softcare_desktop.pages
 {
     /// <summary>
-    /// Interaction logic for AdminPage.xaml
+    /// Interaction logic for AdminBillings.xaml
     /// </summary>
-    public partial class AdminPage : Window
+    public partial class AdminBillings : Page
     {
-        public AdminPage()
+        public AdminBillings()
         {
             InitializeComponent();
-            this.DataContext = new MainViewmodel(); // initialize current page
         }
-
-
     }
 }

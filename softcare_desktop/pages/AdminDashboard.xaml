@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="softcare_desktop.pages.AdminDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:softcare_desktop"
+             d:DataContext="{d:DesignInstance Type=local:MainViewmodel}"
+             mc:Ignorable="d"
+             d:DesignHeight="700"
+             d:DesignWidth="1090">
+    <UserControl.Resources>
+        <Style x:Key="PageHeader"
+               TargetType="TextBlock">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource ReadexProBold}" />
+            <Setter Property="FontSize"
+                    Value="35" />
+            <Setter Property="Foreground"
+                    Value="#FF306FD0" />
+        </Style>
+        <Style x:Key="Numbers"
+               TargetType="TextBlock">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource ReadexProBold}" />
+            <Setter Property="FontSize"
+                    Value="45" />
+            <Setter Property="Foreground"
+                    Value="White" />
+        </Style>
+        <Style x:Key="DashboardStats"
+               TargetType="TextBlock">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource ReadexProMedium}" />
+            <Setter Property="FontSize"
+                    Value="21" />
+            <Setter Property="Foreground"
+                    Value="White" />
+        </Style>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource PageHeader}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="25,0,0,0">Welcome, Admin</TextBlock>
+        <Rectangle Fill="#5e7fb2"
+                   Height="200"
+                   Width="300"
+                   Grid.Row="1"
+                   Margin="25,25,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" />
+        <Image Source="/assets/admin_patients.png"
+               Grid.Row="1"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Height="100"
+               Width="100"
+               Margin="53,53,0,0"
+               RenderTransformOrigin="0.547,0.702" />
+        <TextBlock x:Name="PatientCount"
+                   Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="160,75,0,0"
+                   Style="{StaticResource Numbers}">0</TextBlock>
+        <TextBlock Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Style="{StaticResource DashboardStats}"
+                   Margin="64,158,0,0">
+            Patient Records
+        </TextBlock>
+        <Rectangle Fill="#5e7fb2"
+                   Height="200"
+                   Width="300"
+                   Grid.Row="1"
+                   Margin="360,25,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" />
+        <Image Source="/assets/admin_appointments.png"
+               Grid.Row="1"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Height="100"
+               Width="100"
+               Margin="390,58,0,0"
+               RenderTransformOrigin="0.547,0.702" />
+        <TextBlock x:Name="DoctorAppointments"
+                   Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="495,75,0,0"
+                   Style="{StaticResource Numbers}">0</TextBlock>
+        <TextBlock Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Style="{StaticResource DashboardStats}"
+                   Margin="398,158,0,0">
+    Doctor Appointments
+        </TextBlock>
+        <Rectangle Fill="#5e7fb2"
+                   Height="200"
+                   Width="300"
+                   Grid.Row="1"
+                   Margin="25,260,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" />
+        <Image Source="/assets/admin_billing.png"
+               Grid.Row="1"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Height="100"
+               Width="100"
+               Margin="53,293,0,0"
+               RenderTransformOrigin="0.547,0.702" />
+        <TextBlock x:Name="Billings"
+                   Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="160,315,0,0"
+                   Style="{StaticResource Numbers}">0</TextBlock>
+        <TextBlock Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Style="{StaticResource DashboardStats}"
+                   Margin="64,393,0,0">
+            Billings
+        </TextBlock>
+        <Rectangle Fill="#5e7fb2"
+                   Height="200"
+                   Width="300"
+                   Grid.Row="1"
+                   Margin="360,260,0,0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top" />
+        <Image Source="/assets/admin_users.png"
+               Grid.Row="1"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Height="100"
+               Width="100"
+               Margin="390,293,0,0"
+               RenderTransformOrigin="0.547,0.702" />
+        <TextBlock x:Name="UserAccounts"
+                   Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="495,315,0,0"
+                   Style="{StaticResource Numbers}">0</TextBlock>
+        <TextBlock Grid.Row="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Style="{StaticResource DashboardStats}"
+                   Margin="398,393,0,0">
+            User Accounts
+        </TextBlock>
+    </Grid>
+</UserControl>
