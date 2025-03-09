@@ -80,4 +80,8 @@
     <Resource Include="_Hospital Logo.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="controls\" />
+  </ItemGroup>
+
 </Project>

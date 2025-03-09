@@ -82,6 +82,5 @@
                   Grid.Row="2"
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   SelectionChanged="DataGrid_SelectionChanged" />
-
     </Grid>
 </Page>

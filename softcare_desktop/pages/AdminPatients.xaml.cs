@@ -24,5 +24,10 @@ namespace softcare_desktop.pages
         {
             InitializeComponent();
         }
+
+        private void tbxLastName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

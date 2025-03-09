@@ -10,8 +10,8 @@
         Title="AdminPage"
         Height="900"
         Width="1600"
-        MinHeight="768"
-        MinWidth="1366">
+        MinHeight="900"
+        MinWidth="1600">
     <Window.Resources>
         <Style x:Key="SidebarButtons"
                TargetType="Button">
