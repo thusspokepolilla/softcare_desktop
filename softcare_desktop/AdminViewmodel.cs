@@ -9,7 +9,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace softcare_desktop
 {
-    public class MainViewmodel : ObservableObject
+    public class AdminViewmodel : ObservableObject
     {
         private AdminPageList _adminPageList;
 
@@ -19,13 +19,13 @@ namespace softcare_desktop
             set { SetProperty(ref _adminPageList, value); }
         }
 
-        public ICommand CMDChangePage => new RelayCommand<AdminPageList>(ChangePage);
+        public ICommand CMDAdminChangePage => new RelayCommand<AdminPageList>(AdminChangePage);
 
-        private void ChangePage(AdminPageList newPage)
+        private void AdminChangePage(AdminPageList newPage)
         {
             AdminCurrentPage = newPage;
         }
 
-        public MainViewmodel() { AdminCurrentPage = AdminPageList.AdminDashboard;  }
+        public AdminViewmodel() { AdminCurrentPage = AdminPageList.AdminDashboard;  }
     }
 }

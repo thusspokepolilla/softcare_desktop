@@ -22,7 +22,7 @@ namespace softcare_desktop
         public AdminPage()
         {
             InitializeComponent();
-            this.DataContext = new MainViewmodel(); // initialize current page
+            this.DataContext = new AdminViewmodel(); // initialize current page
         }
 
 

@@ -14,9 +14,9 @@ namespace softcare_desktop
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginScreen : Window
     {
-        public MainWindow()
+        public LoginScreen()
         {
             InitializeComponent();
             
@@ -25,8 +25,10 @@ namespace softcare_desktop
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Login Successful!");
-            AdminPage admin = new AdminPage();
-            admin.Show();
+            DoctorPage doctor = new DoctorPage();
+            doctor.Show();
+            //AdminPage admin = new AdminPage();
+            //admin.Show();
             this.Close();
             
         }

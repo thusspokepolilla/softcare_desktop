@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace softcare_desktop
+namespace softcare_desktop.pages
 {
     /// <summary>
-    /// Interaction logic for DoctorPage.xaml
+    /// Interaction logic for DoctorPatients.xaml
     /// </summary>
-    public partial class DoctorPage : Window
+    public partial class DoctorPatients : Page
     {
-        public DoctorPage()
+        public DoctorPatients()
         {
             InitializeComponent();
-            this.DataContext = new DoctorViewmodel();
         }
     }
 }

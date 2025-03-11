@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:softcare_desktop"
         xmlns:pages="clr-namespace:softcare_desktop.pages"
-        d:DataContext="{d:DesignInstance Type=local:MainViewmodel}"
+        d:DataContext="{d:DesignInstance Type=local:AdminViewmodel}"
         mc:Ignorable="d"
         Title="AdminPage"
         Height="900"
@@ -83,37 +83,37 @@
                     Grid.Row="1"
                     Content="Dashboard"
                     Style="{StaticResource SidebarButtons}"
-                    Command="{Binding CMDChangePage}"
+                    Command="{Binding CMDAdminChangePage}"
                     CommandParameter="{x:Static local:AdminPageList.AdminDashboard}"/>
             <Button x:Name="btnPatients"
                     Grid.Row="2"
                     Content="Patient Records"
                     Style="{StaticResource SidebarButtons}"
-                    Command="{Binding CMDChangePage}"
+                    Command="{Binding CMDAdminChangePage}"
                     CommandParameter="{x:Static local:AdminPageList.AdminPatients}"/>
             <Button x:Name="btnDoctorApps"
                     Grid.Row="3"
                     Content="Doctor Appointments"
                     Style="{StaticResource SidebarButtons}"
-                    Command="{Binding CMDChangePage}"
+                    Command="{Binding CMDAdminChangePage}"
                     CommandParameter="{x:Static local:AdminPageList.AdminDoctors}"/>
             <Button x:Name="btnBillings"
                     Grid.Row="4"
                     Content="Billings"
                     Style="{StaticResource SidebarButtons}"
-                    Command="{Binding CMDChangePage}"
+                    Command="{Binding CMDAdminChangePage}"
                     CommandParameter="{x:Static local:AdminPageList.AdminBillings}"/>
             <Button x:Name="btnSQLQuery"
                     Grid.Row="5"
                     Content="SQL Query"
                     Style="{StaticResource SidebarButtons}"
-                    Command="{Binding CMDChangePage}"
+                    Command="{Binding CMDAdminChangePage}"
                     CommandParameter="{x:Static local:AdminPageList.AdminSQL}"/>
             <Button x:Name="btnUserManagement"
                     Grid.Row="6"
                     Content="User Management"
                     Style="{StaticResource SidebarButtons}"
-                    Command="{Binding CMDChangePage}"
+                    Command="{Binding CMDAdminChangePage}"
                     CommandParameter="{x:Static local:AdminPageList.AdminUsers}" />
             <Button x:Name="btnLogOut"
                     Grid.Row="8"
@@ -136,7 +136,7 @@
             <Frame Grid.Row="1"
                    Margin="30">
                 <Frame.Style>
-                    <Style TargetType="{x:Type ContentControl}">
+                    <Style TargetType="{x:Type Frame}">
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
                                          Value="{x:Static local:AdminPageList.AdminDashboard}">

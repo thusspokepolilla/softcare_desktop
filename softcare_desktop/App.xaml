@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:softcare_desktop"
              xmlns:pages="clr-namespace:softcare_desktop.pages"
-             StartupUri="MainWindow.xaml">
+             StartupUri="LoginScreen.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <FontFamily x:Key="ReadexProBold">./fonts/ReadexPro-bold.ttf#Readex Pro</FontFamily>
@@ -29,6 +29,21 @@
             </DataTemplate>
             <DataTemplate x:Key="aUsers">
                 <pages:AdminUsers />
+            </DataTemplate>
+            <DataTemplate x:Key="dDash">
+                <pages:DoctorDashboard />
+            </DataTemplate>
+            <DataTemplate x:Key="dPatients">
+                <pages:DoctorPatients />
+            </DataTemplate>
+            <DataTemplate x:Key="dAppointments">
+                <pages:DoctorAppointments />
+            </DataTemplate>
+            <DataTemplate x:Key="dBills">
+                <pages:DoctorBillings />
+            </DataTemplate>
+            <DataTemplate x:Key="dAccount">
+                <pages:DoctorAccount />
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
