@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace softcare_desktop
 {
@@ -19,7 +20,20 @@ namespace softcare_desktop
         public LoginScreen()
         {
             InitializeComponent();
-            
+            string Connect = "server=localhost; user=root";
+            MySqlConnection mySqlConnection = new MySqlConnection(Connect);
+            try
+            {
+                mySqlConnection.Open();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                mySqlConnection.Close();
+            }
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
