@@ -20,7 +20,7 @@ namespace softcare_desktop
         public LoginScreen()
         {
             InitializeComponent();
-            string Connect = "server=localhost; user=root";
+            string Connect = "server=localhost; user=root; database=";
             MySqlConnection mySqlConnection = new MySqlConnection(Connect);
             try
             {

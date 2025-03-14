@@ -106,21 +106,9 @@
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
-        <Label Content="Card Number"
-               HorizontalAlignment="Left"
-               Margin="25,142,0,0"
-               Grid.Row="1"
-               VerticalAlignment="Top"
-               Style="{StaticResource ResourceKey=Labels}" />
-        <Label Content="Card Security"
-               HorizontalAlignment="Left"
-               Margin="25,180,0,0"
-               Grid.Row="1"
-               VerticalAlignment="Top"
-               Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Total Amount"
                HorizontalAlignment="Left"
-               Margin="25,218,0,0"
+               Margin="25,142,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
@@ -132,13 +120,13 @@
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Is Paid"
                HorizontalAlignment="Left"
-               Margin="545,28,0,0"
+               Margin="25,180,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Balance"
                HorizontalAlignment="Left"
-               Margin="545,66,0,0"
+               Margin="25,218,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
@@ -158,29 +146,13 @@
                  VerticalAlignment="Top"
                  Width="300"
                  Style="{StaticResource ResourceKey=TextBoxes}" />
-        <TextBox x:Name="tbxCardNumber"
+        <TextBox x:Name="tbxTotalAmount"
                  HorizontalAlignment="Left"
                  Margin="210,146,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
-                 Width="300"
-                 Style="{StaticResource ResourceKey=TextBoxes}" />
-        <TextBox x:Name="tbxTotalAmount"
-                 HorizontalAlignment="Left"
-                 Margin="210,222,0,0"
-                 Grid.Row="1"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top"
                  Width="150"
-                 Style="{StaticResource ResourceKey=TextBoxes}" />
-        <TextBox x:Name="tbxCardSecurity"
-                 HorizontalAlignment="Left"
-                 Margin="210,184,0,0"
-                 Grid.Row="1"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top"
-                 Width="90"
                  Style="{StaticResource ResourceKey=TextBoxes}" />
         <ComboBox x:Name="cmbModeOfPayment"
                   HorizontalAlignment="Left"
@@ -194,17 +166,17 @@
         </ComboBox>
         <ComboBox x:Name="cmbIsPaid"
                   HorizontalAlignment="Left"
-                  Margin="720,32,0,0"
+                  Margin="210,184,0,0"
                   Grid.Row="1"
                   VerticalAlignment="Top"
-                  Width="143"
+                  Width="142"
                   Style="{StaticResource ComboBoxes}">
             <ComboBoxItem Content="True" />
             <ComboBoxItem Content="False" />
         </ComboBox>
         <TextBox x:Name="tbxBalance"
                  HorizontalAlignment="Left"
-                 Margin="720,70,0,0"
+                 Margin="210,222,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
