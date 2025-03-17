@@ -38,7 +38,7 @@
             <Setter Property="FontFamily"
                     Value="{StaticResource ReadexProBold}" />
             <Setter Property="FontSize"
-                    Value="20" />
+                    Value="15" />
             <Setter Property="Foreground"
                     Value="White" />
             <Setter Property="Background"
@@ -100,7 +100,7 @@
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   FontFamily="{StaticResource ReadexProLight}"
                   FontSize="14" />
-        <Label Content="Patient ID"
+        <Label Content="Patient Record ID"
                HorizontalAlignment="Left"
                Margin="25,66,0,0"
                Grid.Row="1"
@@ -108,25 +108,25 @@
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Total Amount"
                HorizontalAlignment="Left"
-               Margin="25,142,0,0"
+               Margin="25,180,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Mode of Payment"
                HorizontalAlignment="Left"
-               Margin="25,104,0,0"
+               Margin="25,142,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Is Paid"
                HorizontalAlignment="Left"
-               Margin="25,180,0,0"
+               Margin="25,218,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Balance"
                HorizontalAlignment="Left"
-               Margin="25,218,0,0"
+               Margin="25,256,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
@@ -148,7 +148,7 @@
                  Style="{StaticResource ResourceKey=TextBoxes}" />
         <TextBox x:Name="tbxTotalAmount"
                  HorizontalAlignment="Left"
-                 Margin="210,146,0,0"
+                 Margin="210,183,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
@@ -156,9 +156,9 @@
                  Style="{StaticResource ResourceKey=TextBoxes}" />
         <ComboBox x:Name="cmbModeOfPayment"
                   HorizontalAlignment="Left"
-                  Margin="210,106,0,0"
+                  Margin="210,0,0,0"
                   Grid.Row="1"
-                  VerticalAlignment="Top"
+                  VerticalAlignment="Center"
                   Width="150"
                   Style="{StaticResource ComboBoxes}">
             <ComboBoxItem Content="Cash" />
@@ -166,7 +166,7 @@
         </ComboBox>
         <ComboBox x:Name="cmbIsPaid"
                   HorizontalAlignment="Left"
-                  Margin="210,184,0,0"
+                  Margin="210,220,0,0"
                   Grid.Row="1"
                   VerticalAlignment="Top"
                   Width="142"
@@ -176,7 +176,7 @@
         </ComboBox>
         <TextBox x:Name="tbxBalance"
                  HorizontalAlignment="Left"
-                 Margin="210,222,0,0"
+                 Margin="210,260,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
@@ -185,7 +185,7 @@
         <Button x:Name="btnAdd"
                 Style="{StaticResource Buttons}"
                 Content="Add"
-                Margin="0,262,353,0"
+                Margin="0,262,333,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"
@@ -194,7 +194,7 @@
         <Button x:Name="btnUpdate"
                 Style="{StaticResource Buttons}"
                 Content="Update"
-                Margin="0,262,246,0"
+                Margin="0,262,233,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"
@@ -203,7 +203,7 @@
         <Button x:Name="btnDelete"
                 Style="{StaticResource Buttons}"
                 Content="Delete"
-                Margin="0,262,138,0"
+                Margin="0,262,133,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"
@@ -212,11 +212,25 @@
         <Button x:Name="btnClear"
                 Style="{StaticResource Buttons}"
                 Content="Clear"
-                HorizontalAlignment="Left"
-                Margin="970,262,0,0"
+                Margin="0,262,33,0"
                 VerticalAlignment="Top"
                 Height="30"
-                Width="87"
-                Grid.Row="1" />
+                Grid.Row="1"
+                HorizontalAlignment="Right"
+                Width="87" />
+        <Label Content="Appointment ID"
+               HorizontalAlignment="Left"
+               Margin="25,104,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <TextBox x:Name="tbxAppointmentID"
+                 HorizontalAlignment="Left"
+                 Margin="210,108,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="300"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
     </Grid>
 </Page>

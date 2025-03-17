@@ -10,6 +10,6 @@ namespace softcare_desktop
 {
     public enum AdminPageList
     {
-        AdminDashboard, AdminPatients, AdminDoctors, AdminBillings, AdminSQL, AdminUsers
+        AdminDashboard, AdminPatients, AdminAppointments, AdminBillings, AdminSQL, AdminUsers
     }
 }

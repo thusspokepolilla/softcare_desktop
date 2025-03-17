@@ -111,7 +111,8 @@
             <Button x:Name="btnLogOut"
                     Grid.Row="8"
                     Content="Log Out"
-                    Style="{StaticResource SidebarButtons}" />
+                    Style="{StaticResource SidebarButtons}"
+                    Click="btnLogOut_Click" />
 
         </Grid>
         <Grid Grid.Column="1">

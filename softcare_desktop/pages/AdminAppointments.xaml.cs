@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace softcare_desktop.pages
 {
     /// <summary>
-    /// Interaction logic for AdminDoctors.xaml
+    /// Interaction logic for AdminAppointments.xaml
     /// </summary>
-    public partial class AdminDoctors : Page
+    public partial class AdminAppointments : Page
     {
-        public AdminDoctors()
+        public AdminAppointments()
         {
             InitializeComponent();
         }

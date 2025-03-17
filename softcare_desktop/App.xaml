@@ -18,8 +18,8 @@
             <DataTemplate x:Key="aPatients">
                 <pages:AdminPatients />
             </DataTemplate>
-            <DataTemplate x:Key="aDocs">
-                <pages:AdminDoctors />
+            <DataTemplate x:Key="aApps">
+                <pages:AdminAppointments />
             </DataTemplate>
             <DataTemplate x:Key="aBills">
                 <pages:AdminBillings />

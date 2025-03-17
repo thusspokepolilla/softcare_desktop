@@ -66,41 +66,208 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="Labels"
+               TargetType="Label">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource ReadexProRegular}" />
+            <Setter Property="FontSize"
+                    Value="18" />
+        </Style>
+        <Style x:Key="TextBoxes"
+               TargetType="TextBox">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource ReadexProLight}" />
+            <Setter Property="FontSize"
+                    Value="18" />
+        </Style>
+        <Style x:Key="ComboBoxes"
+               TargetType="ComboBox">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource ReadexProRegular}" />
+            <Setter Property="FontSize"
+                    Value="18" />
+        </Style>
+        <Style x:Key="DatePickers"
+               TargetType="DatePicker">
+            <Setter Property="FontFamily"
+                    Value="{StaticResource ReadexProLight}" />
+            <Setter Property="FontSize"
+                    Value="18" />
+        </Style>
     </Page.Resources>
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
-            <RowDefinition Height="67" />
+            <RowDefinition Height="274.242" />
+            <RowDefinition Height="45.758" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource PageHeader}"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
-                   Margin="25,0,0,0"
-                   Height="44"
-                   Width="379">Appointments</TextBlock>
-        <TextBox x:Name="tbxSearch"
-                 Margin="25,0,0,0"
+                   Margin="25,0,0,0">Your Appointments</TextBlock>
+        <Label Content="Appointment ID"
+               HorizontalAlignment="Left"
+               Margin="25,28,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}" />
+        <DataGrid x:Name="dtgAppointments"
+                  Grid.Row="3"
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  FontFamily="{StaticResource ReadexProLight}"
+                  FontSize="14" />
+        <Label Content="Last Name"
+               HorizontalAlignment="Left"
+               Margin="25,104,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <Label Content="First Name"
+               HorizontalAlignment="Left"
+               Margin="25,142,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <Label Content="Middle Name"
+               HorizontalAlignment="Left"
+               Margin="25,180,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <Label Content="Appointment Date"
+               HorizontalAlignment="Left"
+               Margin="25,218,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <Label Content="Appointment Status"
+               HorizontalAlignment="Left"
+               Margin="545,66,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <Label Content="Doctor ID"
+               HorizontalAlignment="Left"
+               Margin="25,66,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <TextBox x:Name="tbxAppointmentID"
+                 HorizontalAlignment="Left"
+                 Margin="226,32,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
-                 VerticalAlignment="Center"
-                 Height="22"
-                 AcceptsReturn="True"
-                 FontFamily="{StaticResource ReadexProLight}"
+                 VerticalAlignment="Top"
+                 Width="180"
+                 Style="{StaticResource TextBoxes}" />
+        <TextBox x:Name="tbxLastName"
                  HorizontalAlignment="Left"
-                 Width="307" />
-        <Button x:Name="btnSearch"
+                 Margin="226,108,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="300"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
+        <TextBox x:Name="tbxFirstName"
+                 HorizontalAlignment="Left"
+                 Margin="226,146,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="300"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
+        <TextBox x:Name="tbxMiddleName"
+                 HorizontalAlignment="Left"
+                 Margin="226,184,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="300"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
+        <DatePicker x:Name="dtpAppointmentDate"
+                    HorizontalAlignment="Left"
+                    Margin="226,219,0,0"
+                    Grid.Row="1"
+                    VerticalAlignment="Top"
+                    Style="{StaticResource DatePickers}" />
+        <ComboBox x:Name="cmbAppointmentStatus"
+                  HorizontalAlignment="Left"
+                  Margin="844,68,0,0"
+                  Grid.Row="1"
+                  VerticalAlignment="Top"
+                  Width="180"
+                  Style="{StaticResource ComboBoxes}">
+            <ComboBoxItem Content="Pending" />
+            <ComboBoxItem Content="Admitted" />
+            <ComboBoxItem Content="Canceled" />
+        </ComboBox>
+        <TextBox x:Name="tbxDoctorID"
+                 HorizontalAlignment="Left"
+                 Margin="226,70,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="180"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
+        <Button x:Name="btnAdd"
                 Style="{StaticResource Buttons}"
-                Content="Search"
+                Content="Add"
+                Margin="0,262,233,0"
+                VerticalAlignment="Top"
+                Height="30"
                 Grid.Row="1"
-                Margin="357,0,0,0"
-                HorizontalAlignment="Left"
-                Width="81"
-                Height="22"
-                VerticalAlignment="Center" />
-        <DataGrid x:Name="dtgAppointments"
-                  Margin="25,23,25,29"
-                  Grid.Row="2"
-                  d:ItemsSource="{d:SampleData ItemCount=5}" />
+                Grid.RowSpan="2"
+                HorizontalAlignment="Right"
+                Width="87" />
+        <Button x:Name="btnUpdate"
+                Style="{StaticResource Buttons}"
+                Content="Update"
+                Margin="0,262,133,0"
+                VerticalAlignment="Top"
+                Height="30"
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                HorizontalAlignment="Right"
+                Width="87" />
+        <Button x:Name="btnClear"
+                Style="{StaticResource Buttons}"
+                Content="Clear"
+                Margin="0,262,33,0"
+                VerticalAlignment="Top"
+                Height="30"
+                Grid.Row="1"
+                HorizontalAlignment="Right"
+                Width="87"
+                Grid.RowSpan="2" />
+        <Label Content="Appointment Time (24-hour)"
+               HorizontalAlignment="Left"
+               Margin="545,28,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <TextBox x:Name="tbxAdmissionHour"
+                 HorizontalAlignment="Left"
+                 Margin="844,34,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="58"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
+        <TextBox x:Name="tbxAdmissionMinute"
+                 HorizontalAlignment="Left"
+                 Margin="928,34,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="58"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
+        <Label Content=":"
+               HorizontalAlignment="Left"
+               Margin="908,28,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}"
+               Width="14" />
     </Grid>
 </Page>

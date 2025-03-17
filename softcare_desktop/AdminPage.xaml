@@ -96,7 +96,7 @@
                     Content="Doctor Appointments"
                     Style="{StaticResource SidebarButtons}"
                     Command="{Binding CMDAdminChangePage}"
-                    CommandParameter="{x:Static local:AdminPageList.AdminDoctors}"/>
+                    CommandParameter="{x:Static local:AdminPageList.AdminAppointments}"/>
             <Button x:Name="btnBillings"
                     Grid.Row="4"
                     Content="Billings"
@@ -119,7 +119,7 @@
                     Grid.Row="8"
                     Content="Log Out"
                     Style="{StaticResource SidebarButtons}"
-                    />
+                    Click="btnLogOut_Click" />
             
         </Grid>
         <Grid Grid.Column="1">
@@ -149,9 +149,9 @@
                                         Value="{StaticResource aPatients}" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
-                                         Value="{x:Static local:AdminPageList.AdminDoctors}">
+                                         Value="{x:Static local:AdminPageList.AdminAppointments}">
                                 <Setter Property="ContentTemplate"
-                                        Value="{StaticResource aDocs}" />
+                                        Value="{StaticResource aApps}" />
                             </DataTrigger>
                             <DataTrigger Binding="{Binding AdminCurrentPage,NotifyOnSourceUpdated=True,UpdateSourceTrigger=PropertyChanged}"
                                          Value="{x:Static local:AdminPageList.AdminBillings}">

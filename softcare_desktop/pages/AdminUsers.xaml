@@ -37,7 +37,8 @@
             <Setter Property="FontFamily"
                     Value="{StaticResource ReadexProBold}" />
             <Setter Property="FontSize"
-                    Value="20" />
+                    Value="15
+                    " />
             <Setter Property="Foreground"
                     Value="White" />
             <Setter Property="Background"
@@ -188,7 +189,7 @@
         <Button x:Name="btnAdd"
                 Style="{StaticResource Buttons}"
                 Content="Add"
-                Margin="0,262,353,0"
+                Margin="0,262,333,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"
@@ -197,7 +198,7 @@
         <Button x:Name="btnUpdate"
                 Style="{StaticResource Buttons}"
                 Content="Update"
-                Margin="0,262,246,0"
+                Margin="0,262,233,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"
@@ -206,7 +207,7 @@
         <Button x:Name="btnDelete"
                 Style="{StaticResource Buttons}"
                 Content="Delete"
-                Margin="0,262,138,0"
+                Margin="0,262,133,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"

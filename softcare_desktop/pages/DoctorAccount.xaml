@@ -134,7 +134,7 @@
         <Button x:Name="btnUpdate"
                 Style="{StaticResource Buttons}"
                 Content="Update"
-                Margin="0,262,138,0"
+                Margin="0,262,133,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"

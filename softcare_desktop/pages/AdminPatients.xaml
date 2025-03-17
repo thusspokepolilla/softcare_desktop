@@ -37,7 +37,7 @@
             <Setter Property="FontFamily"
                     Value="{StaticResource ReadexProBold}" />
             <Setter Property="FontSize"
-                    Value="20" />
+                    Value="15" />
             <Setter Property="Foreground"
                     Value="White" />
             <Setter Property="Background"
@@ -100,49 +100,49 @@
                   FontSize="14" />
         <Label Content="Last Name"
                HorizontalAlignment="Left"
-               Margin="25,66,0,0"
+               Margin="25,106,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="First Name"
                HorizontalAlignment="Left"
-               Margin="25,104,0,0"
+               Margin="25,146,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Middle Name"
                HorizontalAlignment="Left"
-               Margin="25,142,0,0"
+               Margin="25,184,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Age"
                HorizontalAlignment="Left"
-               Margin="25,180,0,0"
+               Margin="25,222,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Sex"
                HorizontalAlignment="Left"
-               Margin="25,218,0,0"
+               Margin="25,260,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
-        <Label Content="Admission Time"
+        <Label Content="Admission Date"
                HorizontalAlignment="Left"
-               Margin="545,28,0,0"
+               Margin="496,30,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Admission Status"
                HorizontalAlignment="Left"
-               Margin="545,66,0,0"
+               Margin="496,106,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
         <Label Content="Doctor ID"
                HorizontalAlignment="Left"
-               Margin="545,104,0,0"
+               Margin="25,66,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
@@ -156,7 +156,7 @@
                  Style="{StaticResource TextBoxes}" />
         <TextBox x:Name="tbxLastName"
                  HorizontalAlignment="Left"
-                 Margin="164,70,0,0"
+                 Margin="164,112,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
@@ -164,7 +164,7 @@
                  Style="{StaticResource ResourceKey=TextBoxes}" />
         <TextBox x:Name="tbxFirstName"
                  HorizontalAlignment="Left"
-                 Margin="164,108,0,0"
+                 Margin="164,150,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
@@ -172,7 +172,7 @@
                  Style="{StaticResource ResourceKey=TextBoxes}" />
         <TextBox x:Name="tbxMiddleName"
                  HorizontalAlignment="Left"
-                 Margin="164,146,0,0"
+                 Margin="164,188,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
@@ -180,7 +180,7 @@
                  Style="{StaticResource ResourceKey=TextBoxes}" />
         <TextBox x:Name="tbxAge"
                  HorizontalAlignment="Left"
-                 Margin="164,184,0,0"
+                 Margin="164,226,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
@@ -188,7 +188,7 @@
                  Style="{StaticResource ResourceKey=TextBoxes}" />
         <ComboBox x:Name="cmbSex"
                   HorizontalAlignment="Left"
-                  Margin="164,220,0,0"
+                  Margin="164,262,0,0"
                   Grid.Row="1"
                   VerticalAlignment="Top"
                   Width="120"
@@ -199,16 +199,16 @@
         </ComboBox>
         <DatePicker x:Name="dtpAdmissionTime"
                     HorizontalAlignment="Left"
-                    Margin="720,29,0,0"
+                    Margin="736,31,0,0"
                     Grid.Row="1"
                     VerticalAlignment="Top"
                     Style="{StaticResource DatePickers}" />
         <ComboBox x:Name="cmbAdmissionStatus"
                   HorizontalAlignment="Left"
-                  Margin="720,68,0,0"
+                  Margin="736,110,0,0"
                   Grid.Row="1"
                   VerticalAlignment="Top"
-                  Width="324"
+                  Width="334"
                   Style="{StaticResource ComboBoxes}">
             <ComboBoxItem Content="Admitted" />
             <ComboBoxItem Content="Discharged" />
@@ -217,7 +217,7 @@
         </ComboBox>
         <TextBox x:Name="tbxDoctorID"
                  HorizontalAlignment="Left"
-                 Margin="720,108,0,0"
+                 Margin="164,72,0,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
@@ -226,7 +226,7 @@
         <Button x:Name="btnAdd"
                 Style="{StaticResource Buttons}"
                 Content="Add"
-                Margin="0,262,353,0"
+                Margin="0,262,333,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"
@@ -235,7 +235,7 @@
         <Button x:Name="btnUpdate"
                 Style="{StaticResource Buttons}"
                 Content="Update"
-                Margin="0,262,246,0"
+                Margin="0,262,233,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"
@@ -244,7 +244,7 @@
         <Button x:Name="btnDelete"
                 Style="{StaticResource Buttons}"
                 Content="Delete"
-                Margin="0,262,138,0"
+                Margin="0,262,133,0"
                 VerticalAlignment="Top"
                 Height="30"
                 Grid.Row="1"
@@ -259,5 +259,34 @@
                 Grid.Row="1"
                 HorizontalAlignment="Right"
                 Width="87" />
+        <Label Content="Admission Time (24-hour)"
+               HorizontalAlignment="Left"
+               Margin="496,68,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}" />
+        <TextBox x:Name="tbxAdmissionHour"
+                 HorizontalAlignment="Left"
+                 Margin="736,72,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="58"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
+        <TextBox x:Name="tbxAdmissionMinute"
+                 HorizontalAlignment="Left"
+                 Margin="820,72,0,0"
+                 Grid.Row="1"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="58"
+                 Style="{StaticResource ResourceKey=TextBoxes}" />
+        <Label Content=":"
+               HorizontalAlignment="Left"
+               Margin="800,66,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource ResourceKey=Labels}"
+               Width="14" />
     </Grid>
 </Page>
