@@ -12,9 +12,14 @@ Hospital management system created as a final requirement for the Software Engin
 # Login Credentials
 
 admin acc
+
 username: ingalclarence2004
+
 password: admin1234
 
+
 doctor acc
+
 username: housemd
+
 password: doctor5678
