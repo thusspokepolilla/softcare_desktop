@@ -1,8 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows;
-using BCrypt.Net;
-using System.Security.Cryptography;
 
 namespace softcare_desktop
 {

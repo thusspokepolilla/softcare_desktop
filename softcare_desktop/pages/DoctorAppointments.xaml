@@ -199,7 +199,7 @@
                   Width="180"
                   Style="{StaticResource ComboBoxes}">
             <ComboBoxItem Content="Pending" />
-            <ComboBoxItem Content="Admitted" />
+            <ComboBoxItem Content="Done" />
             <ComboBoxItem Content="Canceled" />
         </ComboBox>
         <TextBox x:Name="tbxDoctorID"

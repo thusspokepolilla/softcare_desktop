@@ -98,7 +98,8 @@
                   Grid.Row="3"
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   FontFamily="{StaticResource ReadexProLight}"
-                  FontSize="14" />
+                  FontSize="14"
+                  SelectionChanged="dtgAppointments_SelectionChanged" />
         <Label Content="Last Name"
                HorizontalAlignment="Left"
                Margin="25,104,0,0"
@@ -181,7 +182,7 @@
                   Width="180"
                   Style="{StaticResource ComboBoxes}">
             <ComboBoxItem Content="Pending" />
-            <ComboBoxItem Content="Admitted" />
+            <ComboBoxItem Content="Done" />
             <ComboBoxItem Content="Canceled" />
         </ComboBox>
         <TextBox x:Name="tbxDoctorID"

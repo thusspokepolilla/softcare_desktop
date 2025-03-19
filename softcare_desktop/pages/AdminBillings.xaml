@@ -99,7 +99,8 @@
                   Grid.Row="2"
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   FontFamily="{StaticResource ReadexProLight}"
-                  FontSize="14" />
+                  FontSize="14"
+                  SelectionChanged="dtgBillings_SelectionChanged" />
         <Label Content="Patient Record ID"
                HorizontalAlignment="Left"
                Margin="25,66,0,0"
@@ -171,8 +172,8 @@
                   VerticalAlignment="Top"
                   Width="142"
                   Style="{StaticResource ComboBoxes}">
-            <ComboBoxItem Content="True" />
-            <ComboBoxItem Content="False" />
+            <ComboBoxItem Content="Yes" />
+            <ComboBoxItem Content="No" />
         </ComboBox>
         <TextBox x:Name="tbxBalance"
                  HorizontalAlignment="Left"

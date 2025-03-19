@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using System.Windows.Input;
 
 namespace softcare_desktop
 {
@@ -26,6 +21,6 @@ namespace softcare_desktop
             AdminCurrentPage = newPage;
         }
 
-        public AdminViewmodel() { AdminCurrentPage = AdminPageList.AdminDashboard;  }
+        public AdminViewmodel() { AdminCurrentPage = AdminPageList.AdminDashboard; }
     }
 }
