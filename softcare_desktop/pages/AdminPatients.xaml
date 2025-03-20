@@ -7,7 +7,8 @@
       mc:Ignorable="d"
       d:DesignHeight="700"
       d:DesignWidth="1090"
-      Title="AdminPatients">
+      Title="AdminPatients"
+      Loaded="Page_Loaded">
     <Page.Resources>
         <Style x:Key="PageHeader"
                TargetType="TextBlock">
@@ -95,10 +96,35 @@
                Style="{StaticResource Labels}" />
         <DataGrid x:Name="dtgPatients"
                   Grid.Row="2"
-                  d:ItemsSource="{d:SampleData ItemCount=5}"
                   FontFamily="{StaticResource ReadexProLight}"
                   FontSize="14"
-                  SelectionChanged="dtgPatients_SelectionChanged" />
+                  SelectionChanged="dtgPatients_SelectionChanged"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=patient_id}"
+                                    Header="patient_id" />
+                <DataGridTextColumn Binding="{Binding Path=doctor_id}"
+                                    Header="doctor_id" />
+                <DataGridTextColumn Binding="{Binding Path=last_name}"
+                                    Header="last_name" />
+                <DataGridTextColumn Binding="{Binding Path=first_name}"
+                                    Header="first_name" />
+                <DataGridTextColumn Binding="{Binding Path=age}"
+                                    Header="age" />
+                <DataGridTextColumn Binding="{Binding Path=sex}"
+                                    Header="sex" />
+                <DataGridTextColumn Binding="{Binding Path=middle_name}"
+                                    Header="middle_name" />
+                <DataGridTextColumn Binding="{Binding Path=admission_date}"
+                                    Header="admission_date" />
+                <DataGridTextColumn Binding="{Binding Path=admission_time}"
+                                    Header="admission_time" />
+                <DataGridTextColumn Binding="{Binding Path=status}"
+                                    Header="status" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="Last Name"
                HorizontalAlignment="Left"
                Margin="25,106,0,0"
@@ -154,7 +180,8 @@
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
                  Width="180"
-                 Style="{StaticResource TextBoxes}" />
+                 Style="{StaticResource TextBoxes}"
+                 IsReadOnly="True" />
         <TextBox x:Name="tbxLastName"
                  HorizontalAlignment="Left"
                  Margin="164,112,0,0"
@@ -197,7 +224,7 @@
             <ComboBoxItem Content="Male" />
             <ComboBoxItem Content="Female" />
         </ComboBox>
-        <DatePicker x:Name="dtpAdmissionTime"
+        <DatePicker x:Name="dtpAdmissionDate"
                     HorizontalAlignment="Left"
                     Margin="736,31,0,0"
                     Grid.Row="1"
@@ -208,7 +235,7 @@
                   Margin="736,110,0,0"
                   Grid.Row="1"
                   VerticalAlignment="Top"
-                  Width="334"
+                  Width="314"
                   Style="{StaticResource ComboBoxes}">
             <ComboBoxItem Content="Admitted" />
             <ComboBoxItem Content="Discharged" />
@@ -231,7 +258,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnAdd_Click" />
         <Button x:Name="btnUpdate"
                 Style="{StaticResource Buttons}"
                 Content="Update"
@@ -240,7 +268,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnUpdate_Click" />
         <Button x:Name="btnDelete"
                 Style="{StaticResource Buttons}"
                 Content="Delete"
@@ -249,7 +278,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnDelete_Click" />
         <Button x:Name="btnClear"
                 Style="{StaticResource Buttons}"
                 Content="Clear"
@@ -258,7 +288,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnClear_Click" />
         <Label Content="Admission Time (24-hour)"
                HorizontalAlignment="Left"
                Margin="496,68,0,0"
@@ -288,5 +319,77 @@
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}"
                Width="14" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="349,28,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="349,68,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="469,106,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="469,146,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="259,222,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="289,260,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="883,68,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="884,30,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="1055,106,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
     </Grid>
 </Page>

@@ -7,7 +7,8 @@
       mc:Ignorable="d"
       d:DesignHeight="700"
       d:DesignWidth="1090"
-      Title="AdminBillings">
+      Title="AdminBillings"
+      Loaded="Page_Loaded">
 
     <Page.Resources>
         <Style x:Key="PageHeader"
@@ -97,10 +98,29 @@
                Style="{StaticResource Labels}" />
         <DataGrid x:Name="dtgBillings"
                   Grid.Row="2"
-                  d:ItemsSource="{d:SampleData ItemCount=5}"
                   FontFamily="{StaticResource ReadexProLight}"
                   FontSize="14"
-                  SelectionChanged="dtgBillings_SelectionChanged" />
+                  SelectionChanged="dtgBillings_SelectionChanged"
+                  SelectionMode="Single"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=billing_id}"
+                                    Header="billing_id" />
+                <DataGridTextColumn Binding="{Binding Path=patient_record_id}"
+                                    Header="patient_record_id" />
+                <DataGridTextColumn Binding="{Binding Path=appointment_id}"
+                                    Header="appointment_id" />
+                <DataGridTextColumn Binding="{Binding Path=mode_of_payment}"
+                                    Header="mode_of_payment" />
+                <DataGridTextColumn Binding="{Binding Path=total_amount}"
+                                    Header="total_amount" />
+                <DataGridTextColumn Binding="{Binding Path=is_paid}"
+                                    Header="is_paid" />
+                <DataGridTextColumn Binding="{Binding Path=balance}"
+                                    Header="balance" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="Patient Record ID"
                HorizontalAlignment="Left"
                Margin="25,66,0,0"
@@ -138,7 +158,8 @@
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
                  Width="150"
-                 Style="{StaticResource TextBoxes}" />
+                 Style="{StaticResource TextBoxes}"
+                 IsReadOnly="True" />
         <TextBox x:Name="tbxPatientID"
                  HorizontalAlignment="Left"
                  Margin="210,70,0,0"
@@ -170,7 +191,7 @@
                   Margin="210,220,0,0"
                   Grid.Row="1"
                   VerticalAlignment="Top"
-                  Width="142"
+                  Width="150"
                   Style="{StaticResource ComboBoxes}">
             <ComboBoxItem Content="Yes" />
             <ComboBoxItem Content="No" />
@@ -191,7 +212,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnAdd_Click" />
         <Button x:Name="btnUpdate"
                 Style="{StaticResource Buttons}"
                 Content="Update"
@@ -200,7 +222,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnUpdate_Click" />
         <Button x:Name="btnDelete"
                 Style="{StaticResource Buttons}"
                 Content="Delete"
@@ -209,7 +232,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnDelete_Click" />
         <Button x:Name="btnClear"
                 Style="{StaticResource Buttons}"
                 Content="Clear"
@@ -218,7 +242,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnClear_Click" />
         <Label Content="Appointment ID"
                HorizontalAlignment="Left"
                Margin="25,104,0,0"
@@ -233,5 +258,45 @@
                  VerticalAlignment="Top"
                  Width="300"
                  Style="{StaticResource ResourceKey=TextBoxes}" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="365,28,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="365,0,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Center"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="365,180,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="365,218,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="395,256,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
     </Grid>
 </Page>

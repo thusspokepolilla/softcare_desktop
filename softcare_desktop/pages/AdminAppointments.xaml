@@ -7,7 +7,8 @@
       mc:Ignorable="d"
       d:DesignHeight="700"
       d:DesignWidth="1090"
-      Title="AdminDoctors">
+      Title="AdminDoctors"
+      Loaded="Page_Loaded">
     <Page.Resources>
         <Style x:Key="PageHeader"
                TargetType="TextBlock">
@@ -96,10 +97,31 @@
                Style="{StaticResource Labels}" />
         <DataGrid x:Name="dtgAppointments"
                   Grid.Row="3"
-                  d:ItemsSource="{d:SampleData ItemCount=5}"
                   FontFamily="{StaticResource ReadexProLight}"
                   FontSize="14"
-                  SelectionChanged="dtgAppointments_SelectionChanged" />
+                  SelectionChanged="dtgAppointments_SelectionChanged"
+                  SelectionMode="Single"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=appointment_id}"
+                                    Header="appointment_id" />
+                <DataGridTextColumn Binding="{Binding Path=doctor_id}"
+                                    Header="doctor_id" />
+                <DataGridTextColumn Binding="{Binding Path=last_name}"
+                                    Header="last_name" />
+                <DataGridTextColumn Binding="{Binding Path=first_name}"
+                                    Header="first_name" />
+                <DataGridTextColumn Binding="{Binding Path=middle_name}"
+                                    Header="middle_name" />
+                <DataGridTextColumn Binding="{Binding Path=appointment_date}"
+                                    Header="appointment_date" />
+                <DataGridTextColumn Binding="{Binding Path=appointment_time}"
+                                    Header="appointment_time" />
+                <DataGridTextColumn Binding="{Binding Path=status}"
+                                    Header="status" />
+            </DataGrid.Columns>
+        </DataGrid>
         <Label Content="Last Name"
                HorizontalAlignment="Left"
                Margin="25,104,0,0"
@@ -143,7 +165,8 @@
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
                  Width="180"
-                 Style="{StaticResource TextBoxes}" />
+                 Style="{StaticResource TextBoxes}"
+                 IsReadOnly="True" />
         <TextBox x:Name="tbxLastName"
                  HorizontalAlignment="Left"
                  Margin="226,108,0,0"
@@ -202,7 +225,8 @@
                 Grid.Row="1"
                 Grid.RowSpan="2"
                 HorizontalAlignment="Right"
-                Width="88" />
+                Width="88"
+                Click="btnAdd_Click" />
         <Button x:Name="btnUpdate"
                 Style="{StaticResource Buttons}"
                 Content="Update"
@@ -212,7 +236,8 @@
                 Grid.Row="1"
                 Grid.RowSpan="2"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnUpdate_Click" />
         <Button x:Name="btnDelete"
                 Style="{StaticResource Buttons}"
                 Content="Delete"
@@ -222,7 +247,8 @@
                 Grid.Row="1"
                 HorizontalAlignment="Right"
                 Width="87"
-                Grid.RowSpan="2" />
+                Grid.RowSpan="2"
+                Click="btnDelete_Click" />
         <Button x:Name="btnClear"
                 Style="{StaticResource Buttons}"
                 Content="Clear"
@@ -232,14 +258,15 @@
                 Grid.Row="1"
                 HorizontalAlignment="Right"
                 Width="87"
-                Grid.RowSpan="2" />
+                Grid.RowSpan="2"
+                Click="btnClear_Click" />
         <Label Content="Appointment Time (24-hour)"
                HorizontalAlignment="Left"
                Margin="545,28,0,0"
                Grid.Row="1"
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}" />
-        <TextBox x:Name="tbxAdmissionHour"
+        <TextBox x:Name="tbxAppointmentHour"
                  HorizontalAlignment="Left"
                  Margin="844,34,0,0"
                  Grid.Row="1"
@@ -247,7 +274,7 @@
                  VerticalAlignment="Top"
                  Width="58"
                  Style="{StaticResource ResourceKey=TextBoxes}" />
-        <TextBox x:Name="tbxAdmissionMinute"
+        <TextBox x:Name="tbxAppointmentMinute"
                  HorizontalAlignment="Left"
                  Margin="928,34,0,0"
                  Grid.Row="1"
@@ -262,5 +289,61 @@
                VerticalAlignment="Top"
                Style="{StaticResource ResourceKey=Labels}"
                Width="14" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="411,28,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="411,66,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="531,104,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="531,142,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="374,218,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="991,28,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="1029,66,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
     </Grid>
 </Page>

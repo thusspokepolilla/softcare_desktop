@@ -102,9 +102,11 @@
                   FontSize="14"
                   SelectionChanged="dtgUsers_SelectionChanged"
                   IsReadOnly="True"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                  SelectionMode="Single">
             <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Path=user_id}" Header="user_id" />
+                <DataGridTextColumn Binding="{Binding Path=user_id}"
+                                    Header="user_id" />
                 <DataGridTextColumn Binding="{Binding Path=username}"
                                     Header="username" />
                 <DataGridTextColumn Binding="{Binding Path=role}"
@@ -116,6 +118,7 @@
                 <DataGridTextColumn Binding="{Binding Path=middle_name}"
                                     Header="middle_name" />
             </DataGrid.Columns>
+
         </DataGrid>
         <Label Content="Last Name"
                HorizontalAlignment="Left"
@@ -162,7 +165,7 @@
                  Width="180"
                  Style="{StaticResource TextBoxes}"
                  IsReadOnly="True"
-                 Text="{Binding SelectedItem.userid, ElementName=dtgUsers}"/>
+                 Text="{Binding SelectedItem.userid, ElementName=dtgUsers}" />
         <TextBox x:Name="tbxLastName"
                  HorizontalAlignment="Left"
                  Margin="226,184,0,0"
@@ -223,7 +226,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnUpdate_Click" />
         <Button x:Name="btnDelete"
                 Style="{StaticResource Buttons}"
                 Content="Delete"
@@ -232,7 +236,8 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnDelete_Click" />
         <Button x:Name="btnClear"
                 Style="{StaticResource Buttons}"
                 Content="Clear"
@@ -241,13 +246,62 @@
                 Height="30"
                 Grid.Row="1"
                 HorizontalAlignment="Right"
-                Width="87" />
+                Width="87"
+                Click="btnClear_Click" />
         <PasswordBox x:Name="tbxPassword"
-                 HorizontalAlignment="Left"
-                 Margin="226,108,0,0"
-                 Grid.Row="1"
-                 VerticalAlignment="Top"
-                 Width="300"
-                 FontSize="18" />
+                     HorizontalAlignment="Left"
+                     Margin="226,108,0,0"
+                     Grid.Row="1"
+                     VerticalAlignment="Top"
+                     Width="300"
+                     FontSize="18" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="411,28,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="531,66,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="531,105,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="411,0,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Center"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="531,180,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
+        <Label Content="*"
+               HorizontalAlignment="Left"
+               Margin="531,218,0,0"
+               Grid.Row="1"
+               VerticalAlignment="Top"
+               Style="{StaticResource Labels}"
+               Width="46"
+               Foreground="Red" />
     </Grid>
 </Page>
