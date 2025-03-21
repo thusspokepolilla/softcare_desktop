@@ -11,6 +11,7 @@ namespace softcare_desktop
         {
             InitializeComponent();
             this.DataContext = new AdminViewmodel(); // initialize current page
+            tbkAdminName.Text = UserDetails.Username;
         }
 
         private void btnLogOut_Click(object sender, RoutedEventArgs e)

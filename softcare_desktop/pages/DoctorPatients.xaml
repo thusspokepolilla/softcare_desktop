@@ -7,7 +7,8 @@
       mc:Ignorable="d"
       d:DesignHeight="700"
       d:DesignWidth="1090"
-      Title="DoctorPatients">
+      Title="DoctorPatients"
+      Loaded="Page_Loaded">
     <Page.Resources>
         <Style x:Key="PageHeader"
                TargetType="TextBlock">
@@ -71,7 +72,6 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
-            <RowDefinition Height="67" />
             <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource PageHeader}"
@@ -79,29 +79,12 @@
                    VerticalAlignment="Center"
                    Margin="25,0,0,0"
                    Height="44"
-                   Width="143">Patients</TextBlock>
-        <TextBox x:Name="tbxSearch"
-                 Margin="25,0,0,0"
-                 Grid.Row="1"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Center"
-                 Height="22"
-                 AcceptsReturn="True"
-                 FontFamily="{StaticResource ReadexProLight}"
-                 HorizontalAlignment="Left"
-                 Width="307" />
-        <Button x:Name="btnSearch"
-                Style="{StaticResource Buttons}"
-                Content="Search"
-                Grid.Row="1"
-                Margin="357,0,0,0"
-                HorizontalAlignment="Left"
-                Width="81"
-                Height="22"
-                VerticalAlignment="Center" />
+                   Width="293"
+                   Text="Patient Records" />
         <DataGrid x:Name="dtgPatients"
                   Margin="25,23,25,29"
                   Grid.Row="2"
-                  d:ItemsSource="{d:SampleData ItemCount=5}" />
+                  IsReadOnly="True"
+                  SelectionMode="Single"/>
     </Grid>
 </Page>

@@ -24,9 +24,9 @@ namespace softcare_desktop.pages
             {
                 load.Open();
                 MySqlDataAdapter store = new MySqlDataAdapter(queryString, load);
-                DataTable appTable = new DataTable();
-                store.Fill(appTable);
-                dtgBillings.ItemsSource = appTable.DefaultView;
+                DataTable billingTable = new DataTable();
+                store.Fill(billingTable);
+                dtgBillings.ItemsSource = billingTable.DefaultView;
             }
             catch (Exception ex)
             {

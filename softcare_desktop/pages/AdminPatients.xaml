@@ -111,12 +111,12 @@
                                     Header="last_name" />
                 <DataGridTextColumn Binding="{Binding Path=first_name}"
                                     Header="first_name" />
+                <DataGridTextColumn Binding="{Binding Path=middle_name}"
+                                    Header="middle_name" />
                 <DataGridTextColumn Binding="{Binding Path=age}"
                                     Header="age" />
                 <DataGridTextColumn Binding="{Binding Path=sex}"
                                     Header="sex" />
-                <DataGridTextColumn Binding="{Binding Path=middle_name}"
-                                    Header="middle_name" />
                 <DataGridTextColumn Binding="{Binding Path=admission_date}"
                                     Header="admission_date" />
                 <DataGridTextColumn Binding="{Binding Path=admission_time}"

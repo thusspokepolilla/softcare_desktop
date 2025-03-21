@@ -17,13 +17,18 @@ namespace softcare_desktop.pages
 
         static void loadData(DataGrid dtgAppointments)
         {
+            string DoctorID = UserDetails.UserID;
+
             string loadString = "server=localhost; user=root; database=softcare_hospital_db";
-            string queryString = "SELECT * FROM appointments";
+            string queryString = "SELECT * FROM appointments WHERE doctor_id=@doctor_id";
             MySqlConnection load = new MySqlConnection(loadString);
             try
             {
                 load.Open();
-                MySqlDataAdapter store = new MySqlDataAdapter(queryString, load);
+                MySqlCommand queryAppointments = new MySqlCommand(queryString, load);
+                queryAppointments.Parameters.AddWithValue("@doctor_id", DoctorID);
+
+                MySqlDataAdapter store = new MySqlDataAdapter(queryAppointments);
                 DataTable appTable = new DataTable();
                 store.Fill(appTable);
                 dtgAppointments.ItemsSource = appTable.DefaultView;
@@ -59,18 +64,10 @@ namespace softcare_desktop.pages
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            DataTable dataTable = new DataTable();
-            DataColumn appointment_id = new DataColumn("last_name", typeof(string));
-            DataColumn doctor_id = new DataColumn("first_name", typeof(string));
-            DataColumn last_name = new DataColumn("last_name", typeof(string));
-            DataColumn first_name = new DataColumn("first_name", typeof(string));
-            DataColumn middle_name = new DataColumn("middle_name", typeof(string));
-            DataColumn appointment_date = new DataColumn("appointment_date", typeof(string));
-            DataColumn appointment_time = new DataColumn("appointment_time", typeof(string));
-            DataColumn status = new DataColumn("status", typeof(string));
-
             loadData(dtgAppointments);
+            tbxDoctorID.Text = UserDetails.UserID;
         }
+
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             string conString = "server=localhost; user=root; database=softcare_hospital_db";
@@ -103,7 +100,6 @@ namespace softcare_desktop.pages
                     }
                     loadData(dtgAppointments);
                     dtgAppointments.SelectedIndex = -1;
-                    tbxDoctorID.Clear();
                     tbxLastName.Clear();
                     tbxFirstName.Clear();
                     tbxMiddleName.Clear();
@@ -164,7 +160,6 @@ namespace softcare_desktop.pages
                         }
                         loadData(dtgAppointments);
                         dtgAppointments.SelectedIndex = -1;
-                        tbxDoctorID.Clear();
                         tbxLastName.Clear();
                         tbxFirstName.Clear();
                         tbxMiddleName.Clear();
@@ -196,7 +191,6 @@ namespace softcare_desktop.pages
         {
             loadData(dtgAppointments);
             dtgAppointments.SelectedIndex = -1;
-            tbxDoctorID.Clear();
             tbxLastName.Clear();
             tbxFirstName.Clear();
             tbxMiddleName.Clear();

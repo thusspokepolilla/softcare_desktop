@@ -7,7 +7,8 @@
       mc:Ignorable="d"
       d:DesignHeight="700"
       d:DesignWidth="1090"
-      Title="DoctorDashboard">
+      Title="DoctorDashboard"
+      Loaded="Page_Loaded">
     <Page.Resources>
         <Style x:Key="PageHeader"
                TargetType="TextBlock">
@@ -46,7 +47,8 @@
         <TextBlock Style="{StaticResource PageHeader}"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Bottom"
-                   Margin="25,0,0,18">Welcome, Doctor</TextBlock>
+                   Margin="25,0,0,18"
+                   x:Name="tbkWelcomeName">Welcome, Doctor</TextBlock>
         <Rectangle Fill="#19c28a"
                    Height="200"
                    Width="300"
@@ -144,7 +146,9 @@
                 Pending Appointments
             </TextBlock>
             <DataGrid x:Name="dtgPendingAppointments"
-                      Margin="25,70,25,0" />
+                      Margin="25,70,25,0"
+                      IsReadOnly="True"
+                      SelectionMode="Single" />
             <TextBlock Style="{StaticResource PageHeader}"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Top"
@@ -155,7 +159,9 @@
             </TextBlock>
             <DataGrid x:Name="dtgUnpaidBillings"
                       Margin="25,70,25,0" 
-                      Grid.Column="1"/>
+                      Grid.Column="1"
+                      IsReadOnly="True"
+                      SelectionMode="Single" />
         </Grid>
     </Grid>
 </Page>

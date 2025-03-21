@@ -75,7 +75,8 @@
                        FontSize="28"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center"
-                       Margin="134,0,0,0">
+                       Margin="134,0,0,0"
+                       x:Name="tbkDoctorName">
                 DOCTOR
             </TextBlock>
             <Button x:Name="btnDashboard"

@@ -57,8 +57,10 @@ namespace softcare_desktop
             MySqlConnection con = new MySqlConnection(conString);
             String queryPass = $"SELECT password FROM users WHERE username=@username";
             String queryRole = $"SELECT role FROM users WHERE username=@username";
+            String queryUserDetails = $"SELECT user_id, username, first_name, last_name FROM users WHERE username=@username";
             MySqlCommand cmdPass = new MySqlCommand(queryPass, con);
             MySqlCommand cmdRole = new MySqlCommand(queryRole, con);
+            MySqlCommand cmdUserDetails = new MySqlCommand(queryUserDetails, con);
             try
             {
                 con.Open();
@@ -67,9 +69,20 @@ namespace softcare_desktop
                 DataTable password = new DataTable();
                 sdaPass.Fill(password);
                 String passHash = (string)cmdPass.ExecuteScalar();
+
                 if (password.Rows.Count > 0 && BCrypt.Net.BCrypt.EnhancedVerify(tbxPass.Password, passHash))
                 {
                     cmdRole.Parameters.AddWithValue("@username", tbxUser.Text);
+                    cmdUserDetails.Parameters.AddWithValue("@username", tbxUser.Text);
+                    MySqlDataAdapter sdaUser = new MySqlDataAdapter(cmdUserDetails);
+                    DataTable userCredentials = new DataTable();
+                    sdaUser.Fill(userCredentials);
+
+                    UserDetails.UserID = userCredentials.Rows[0][0].ToString();
+                    UserDetails.Username = userCredentials.Rows[0][1].ToString();
+                    UserDetails.FirstName = userCredentials.Rows[0][2].ToString();
+                    UserDetails.LastName = userCredentials.Rows[0][3].ToString();
+
                     String role = (String)cmdRole.ExecuteScalar();
                     switch (role)
                     {
@@ -102,9 +115,6 @@ namespace softcare_desktop
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Stop);
                 Environment.Exit(1);
             }
-
-
-
         }
     }
 }

@@ -64,7 +64,6 @@
                  Margin="25,10,138,0"
                  Grid.Row="1"
                  TextWrapping="Wrap"
-                 Text="TextBox"
                  VerticalAlignment="Top"
                  Height="72"
                  AcceptsReturn="True"
@@ -77,10 +76,13 @@
                 HorizontalAlignment="Right"
                 Width="78"
                 Height="42"
-                VerticalAlignment="Top" />
+                VerticalAlignment="Top"
+                Click="btnGo_Click" />
         <DataGrid Margin="25,23,25,29"
                   Grid.Row="2"
                   d:ItemsSource="{d:SampleData ItemCount=5}"
-                  SelectionChanged="DataGrid_SelectionChanged" />
+                  SelectionMode="Single"
+                  IsReadOnly="True" 
+                  x:Name="dtgQuery"/>
     </Grid>
 </Page>
